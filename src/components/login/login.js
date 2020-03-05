@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 import "./login.css";
 class Login extends Component {
@@ -18,12 +19,19 @@ class Login extends Component {
     });
   }
 
-  submit() {
-    alert(this.state.password);
+  submit(e) {
+    e.preventDefault();
+    this.props.dispatch({
+      type: "USERLOGIN",
+      payload: { username: this.state.username, password: this.state.password }
+    });
   }
 
   render() {
     console.log(this.props);
+    if (this.props && this.props.isLogdni) {
+      return <Redirect to="/usersList" />;
+    }
     return (
       <div className="log-form">
         <h2>Login to your account</h2>
@@ -42,7 +50,7 @@ class Login extends Component {
             onChange={e => this.handlChange(e)}
             placeholder="password"
           />
-          <button type="submit" className="btn" onClick={() => this.submit()}>
+          <button type="submit" className="btn" onClick={e => this.submit(e)}>
             Login
           </button>
           <a className="forgot" href="#">
@@ -56,4 +64,5 @@ class Login extends Component {
 const MapStateToProps = state => {
   return state;
 };
+
 export default connect(MapStateToProps)(Login);
