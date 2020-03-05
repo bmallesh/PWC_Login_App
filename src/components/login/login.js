@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
 import "./login.css";
 class Login extends Component {
   constructor() {
@@ -21,8 +23,9 @@ class Login extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
-      <div class="log-form">
+      <div className="log-form">
         <h2>Login to your account</h2>
         <form>
           <input
@@ -39,10 +42,10 @@ class Login extends Component {
             onChange={e => this.handlChange(e)}
             placeholder="password"
           />
-          <button type="submit" class="btn" onClick={() => this.submit()}>
+          <button type="submit" className="btn" onClick={() => this.submit()}>
             Login
           </button>
-          <a class="forgot" href="#">
+          <a className="forgot" href="#">
             Forgot Username?
           </a>
         </form>
@@ -50,4 +53,7 @@ class Login extends Component {
     );
   }
 }
-export default Login;
+const MapStateToProps = state => {
+  return state;
+};
+export default connect(MapStateToProps)(Login);

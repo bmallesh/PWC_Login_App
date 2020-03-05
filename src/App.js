@@ -2,8 +2,8 @@ import React from "react";
 import "./styles.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Login from "./login/login";
-import UsersList from "./usersList";
+import Login from "./components/login/login";
+import UsersList from "./components/usersList/usersList";
 
 export default function App() {
   return (
