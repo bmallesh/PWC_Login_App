@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { Table } from "react-fluid-table";
-
-import MaterialTable from "material-table";
+import "./usersList.css";
 
 class UsersList extends Component {
   render() {
@@ -11,9 +9,9 @@ class UsersList extends Component {
       return <Redirect to="/" />;
     }
     return (
-      <div>
+      <div className="container marginTop30">
         <h2>Users List</h2>
-        <table class="table table-bordered">
+        <table className="table table-bordered">
           <thead>
             <tr>
               <th>Id</th>

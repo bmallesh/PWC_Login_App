@@ -43,12 +43,12 @@ class Login extends Component {
     return (
       <div>
         {this.props && this.props.isErr && (
-          <p class="text-danger margin10 text-center">
+          <p class="text-danger marginTop30 text-center">
             {this.props && this.props.errMsg}
           </p>
         )}
         {this.state && !!this.state.errMsg && (
-          <p class="text-danger margin10 text-center">
+          <p class="text-danger marginTop30 text-center">
             {this.state && this.state.errMsg}
           </p>
         )}
