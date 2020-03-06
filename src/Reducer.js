@@ -7,7 +7,12 @@ const UsersReducer = (state = { userNeme: "malle" }, action) => {
         userdata.usersLogin.password === action.payload.password
       ) {
         console.log("logdin");
-        return { ...state, isLogdni: true, userNeme: action.payload.username };
+        return {
+          ...state,
+          isLogdni: true,
+          userNeme: action.payload.username,
+          usersList: userdata.usersList
+        };
       }
       return { ...state, isErr: true, errMsg: "Invalid User" };
     }

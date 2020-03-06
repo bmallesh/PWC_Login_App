@@ -120,3 +120,6 @@ body {
 .log-form .forgot:hover {
   color: #1ba0a9;
 }
+.margin10 {
+  margin: 30px;
+}
