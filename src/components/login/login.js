@@ -43,10 +43,14 @@ class Login extends Component {
     return (
       <div>
         {this.props && this.props.isErr && (
-          <p class="text-danger margin10">{this.props && this.props.errMsg}</p>
+          <p class="text-danger margin10 text-center">
+            {this.props && this.props.errMsg}
+          </p>
         )}
         {this.state && !!this.state.errMsg && (
-          <p class="text-danger margin10">{this.state && this.state.errMsg}</p>
+          <p class="text-danger margin10 text-center">
+            {this.state && this.state.errMsg}
+          </p>
         )}
         <div className="log-form">
           <h2>Login to your account</h2>
